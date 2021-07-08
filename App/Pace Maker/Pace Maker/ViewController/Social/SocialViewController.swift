@@ -96,7 +96,7 @@ class SocialViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         let refer = realtimeReference.reference(withPath: "log")
         let logOrderByDate = refer.queryOrdered(byChild: "date").queryLimited(toLast: 30)
-        logOrderByDate.observe(.value, with: {snapshot in
+        logOrderByDate.observeSingleEvent(of: .value) {snapshot in
             self.logOfFriends.removeAll()
             for child in snapshot.children.allObjects as! [DataSnapshot]{
                 let val = child.childSnapshot(forPath: "runner").value as! String
@@ -106,7 +106,7 @@ class SocialViewController: UIViewController, UICollectionViewDataSource, UIColl
             }
             // self.logOfFriends.reverse()
             self.socialCollectionView.reloadData()
-        })
+        }
         
     }
     

@@ -12,8 +12,7 @@ class RouteSelectViewController: UIViewController {
     
     var routes: [Log] = []
     var routesBySelf: [Log] = []
-    var indexToDateString: [String] = []
-    var routesByGroup: [String:[Log]] = [:]
+    var routesOthers: [Log] = []
     
     var refreshControl = UIRefreshControl()
     
@@ -26,7 +25,7 @@ class RouteSelectViewController: UIViewController {
         super.viewDidLoad()
         setNavigationBar()
         setTableView()
-         loadLogs()
+        loadLogs()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,62 +54,12 @@ class RouteSelectViewController: UIViewController {
         self.refreshControl.endRefreshing()
     }
     
-    func groupRoutes() {
-        groupRoutesByDate()
-        groupRoutesByMonth()
-        groupRoutesByName()
-    }
-    
-    func groupRoutesByName(){
-        
-    }
-
-    
-    func groupRoutesByDate(){
-        routesByGroup.removeAll()
-        indexToDateString.removeAll()
-        for route in routes {
-            let date = route.dateString
-            if routesByGroup[date] == nil {
-                indexToDateString.append(date)
-                routesByGroup[date] = [route]
-            }else{
-                routesByGroup[date]?.append(route)
-            }
-        }
-        indexToDateString = indexToDateString.sorted(by: >)
-    }
-    
-    func groupRoutesByMonth(){
-        routesByGroup.removeAll()
-        indexToDateString.removeAll()
-        
-        let monthFormatter = DateFormatter()
-        monthFormatter.dateFormat = "MM"
-        let calendar = Calendar.current
-
-        for route in routes {
-            let date: Date = dateFormatter.date(from: route.dateString)!
-            let monthFormatter = DateFormatter()
-            monthFormatter.dateFormat = "MM"
-            let monthString = calendar.monthSymbols[(Int(monthFormatter.string(from: date)) ?? 1) - 1]
-            
-            if routesByGroup[monthString] == nil {
-                indexToDateString.append(monthString)
-                routesByGroup[monthString] = [route]
-            }else{
-                routesByGroup[monthString]?.append(route)
-            }
-        }
-        indexToDateString = indexToDateString.sorted(by: >)
-    }
-    
     func loadLogs(){
         guard let user = user else { return }
         
         let logReference = realtimeReference.reference(withPath: "log")
         logReference.queryOrdered(byChild: "date")
-            .observe(.value) { snapshot in
+            .observeSingleEvent(of: .value) { snapshot in
                 let snapshot = snapshot.value as? [String : AnyObject] ?? [:]
                  print("LOGS snapshot.count",snapshot.count)
                 
@@ -130,62 +79,81 @@ class RouteSelectViewController: UIViewController {
                     if runnerId == user.UID {
                         self.routesBySelf.append(fetchedLog)
                     } else {
-                        self.routes.append(fetchedLog)
+                        self.routesOthers.append(fetchedLog)
                     }
                 }
+                self.routesBySelf.sort() {$0.dateString > $1.dateString }
+                self.routesOthers.sort() {$0.dateString > $1.dateString }
+                self.routesOthers = self.routesOthers.uniqueFilter()
                 self.updateUI()
             }
     }
     
     func updateUI() {
-        groupRoutes()
         tableView.reloadData()
         
         if routesBySelf.count != 0 {
             // 최고 기록
-            guard let paceInSeconds = routesBySelf.max (by: { lhs, rhs in
-                return lhs.pace > rhs.pace
+            guard let paceInSeconds = routesBySelf.max(by: { lhs, rhs in
+                lhs.pace < rhs.pace
             })?.pace else { return }
-            bestRecordLabel.text = "\(paceInSeconds / 60) \(paceInSeconds % 60)"
+            
+            bestRecordLabel.text = "km 당 \(paceInSeconds / 60) 분 \(paceInSeconds % 60) 초"
             
             // 최근 기록
-            guard let latestRecordPaceInSeconds = routesBySelf.last?.pace else { return }
-            latestRecordLabel.text = "\(latestRecordPaceInSeconds / 60) \(latestRecordPaceInSeconds % 60)"
+            guard let latestRecordPaceInSeconds = routesBySelf.first?.pace else { return }
+            latestRecordLabel.text = "km 당 \(latestRecordPaceInSeconds / 60) 분 \(latestRecordPaceInSeconds % 60) 초"
+            
         }else {
             bestRecordLabel.text = "- : --"
             latestRecordLabel.text = "- : --"
         }
     }
     
+    /// 다음화면으로 넘어가는 경우는, 테이블 뷰 셀을 하나 선택했거나, 가장 위에있는 나의 기록을 눌렀을때로 나뉜다.
+    /// RouteDetailViewController 의 log 를 세팅해주면서 넘어간다.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let nextViewController = segue.destination as? RouteDetailViewController{
-           if let indexPath = tableView.indexPathForSelectedRow {
-                let dateString = indexToDateString[indexPath.section]
-                let selectedRoute = routesByGroup[dateString]![indexPath.row]
-                
+            if let indexPath = tableView.indexPathForSelectedRow {
+                // table view cell 터치
+                let selectedRoute = indexPath.section == 1 ? routesBySelf[indexPath.row] : routesOthers[indexPath.row]
                 nextViewController.log = selectedRoute
-           }else {
-                if routesByGroup.count != 0 {
-                    nextViewController.log = routesBySelf.max(by: { lhs, rhs in
-                        lhs.pace < rhs.pace
-                    })
-                }
-           }
+            }else {
+                // 내 최고기록-최근기록 이랑 경쟁하려는 경우 (table view 와 무관)
+                nextViewController.log = routesBySelf.max(by: { lhs, rhs in
+                    lhs.pace < rhs.pace
+                })
+            }
         }
     }
 }
 
 extension RouteSelectViewController : UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return routesByGroup.count
+        var numberOfSections = 0
+        if !routesBySelf.isEmpty {
+            numberOfSections += 1
+        }
+        if !routesOthers.isEmpty {
+            numberOfSections += 1
+        }
+        return numberOfSections
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return routesByGroup[indexToDateString[section]]!.count
+        if section == 0 {
+            return routesBySelf.count
+        }else {
+            return routesOthers.count
+        }
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return indexToDateString[section]
+        if section == 0 {
+            return "나의 기록"
+        }else {
+            return "친구들의 기록"
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -198,15 +166,44 @@ extension RouteSelectViewController : UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return "총 : \(String((routesByGroup[indexToDateString[section]] ?? []).count) )"
+        if section == 0 {
+            return "총 \(routesBySelf.count) 번의 달리기"
+        }else {
+            return "총 \(routesOthers.count) 명의 달리기"
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RoutesTableViewCell",for: indexPath)
-        let route = routesByGroup[indexToDateString[indexPath.section]]![indexPath.row]
-        cell.textLabel?.text = "\(route.nickname)"
-        cell.detailTextLabel?.text = "\(route.paceString)"
+        
+        if indexPath.section == 0 {
+            let route = routesBySelf[indexPath.row]
+            
+            cell.textLabel?.text = "\(route.dateString) 날의 달리기"
+            cell.detailTextLabel?.text = "거리 \(String(format: "%.2fkm",route.distanceInKilometer)) 페이스 \(route.paceString)"
+        }else {
+            let route = routesOthers[indexPath.row]
+            cell.textLabel?.text = "\(route.nickname) 님의 달리기 \(route.dateString)"
+            cell.detailTextLabel?.text = "거리 \(String(format: "%.2fkm",route.distanceInKilometer)) 페이스 \(route.paceString)"
+        }
         
         return cell
+    }
+}
+
+extension Array {
+    func uniqueFilter() -> [Log] {
+        var result: [Log] = []
+        var runnerUids = Set<String>()
+        for x in self {
+            if let x = x as? Log{
+                if !runnerUids.contains(x.runnerUID) {
+                    runnerUids.insert(x.runnerUID)
+                    result.append(x)
+                    print("hello")
+                }
+            }
+        }
+        return result
     }
 }

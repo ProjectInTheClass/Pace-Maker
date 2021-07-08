@@ -18,9 +18,6 @@ var homeScreenChallengeIndex : Int = 0
 
 class HomeViewController: UIViewController{
     
-//    var loginSuccessBanner: NotificationBanner? = nil
-//        =  NotificationBanner(customView: UIView(frame: CGRect(origin: CGPoint(x: 0, y: 88), size: CGSize(width: 100,height: 200))))
-    
     var loginRequested: Bool = true
 
     @IBOutlet weak var leftBarButtonItem: UIBarButtonItem!
@@ -51,6 +48,7 @@ class HomeViewController: UIViewController{
         customView.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         customView.addTarget(self, action: #selector(tappedAutoLogin), for: .touchUpInside)
         rightBarButtonItem.customView = customView
+        
     }
     
     @IBAction func tappedStartRunning(_ sender: Any) {

@@ -10,8 +10,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="BlackHanSans.ttf">
-            <string>BlackHanSans</string>
+        <array key="NotoSansKR-Bold.otf">
+            <string>NotoSansKR-Bold</string>
         </array>
     </customFonts>
     <scenes>
@@ -60,7 +60,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="EBb-l7-b7w">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1348.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1484.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qVu-Xb-nEa" userLabel="빈 뷰">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
@@ -154,7 +154,7 @@
                                                                     <visualEffectView opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rDz-Vn-Is2">
                                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="286.5"/>
                                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="q1g-0G-JKq">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="287"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="286.5"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3" translatesAutoresizingMaskIntoConstraints="NO" id="ups-Ne-bdx" userLabel="challenge Image">
@@ -310,8 +310,14 @@
                                                             <constraint firstAttribute="trailing" secondItem="eGm-Rt-f3Q" secondAttribute="trailing" constant="16" id="kcM-Vd-7Bh"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="250" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iB7-VJ-bhW" userLabel="빈 뷰">
-                                                        <rect key="frame" x="0.0" y="792.5" width="414" height="556"/>
+                                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="iB7-VJ-bhW" userLabel="빈 뷰">
+                                                        <rect key="frame" x="0.0" y="792.5" width="414" height="120"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="120" id="ij5-B0-5ek"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="250" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JFo-kI-WXJ" userLabel="빈 뷰">
+                                                        <rect key="frame" x="0.0" y="928.5" width="414" height="556"/>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -338,37 +344,45 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="bPK-6T-HFS"/>
                             </scrollView>
                             <view alpha="0.83999999999999997" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2qP-fp-e8M" userLabel="Start Running Overlay" customClass="RoundedView" customModule="Pace_Maker" customModuleProvider="target">
-                                <rect key="frame" x="8" y="717" width="398" height="80"/>
+                                <rect key="frame" x="163" y="709" width="88" height="88"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="러닝 시작하기 &gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ih7-EI-OQg">
-                                        <rect key="frame" x="103" y="24" width="192" height="32"/>
-                                        <fontDescription key="fontDescription" name="BlackHanSans" family="Black Han Sans" pointSize="32"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="러닝" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ih7-EI-OQg">
+                                        <rect key="frame" x="30" y="34.5" width="28" height="19"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ne8-J0-JU0" userLabel="Start Running Button">
-                                        <rect key="frame" x="0.0" y="0.0" width="398" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="88" height="88"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <connections>
                                             <action selector="tappedStartRunning:" destination="0fW-Lw-UHA" eventType="touchUpInside" id="J0N-1x-uRa"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="0EY-oJ-d78"/>
+                                    <constraint firstAttribute="height" constant="88" id="0EY-oJ-d78"/>
                                     <constraint firstItem="Ne8-J0-JU0" firstAttribute="leading" secondItem="2qP-fp-e8M" secondAttribute="leading" id="6td-Yh-l2O"/>
                                     <constraint firstItem="Ih7-EI-OQg" firstAttribute="centerX" secondItem="2qP-fp-e8M" secondAttribute="centerX" id="AC6-Yj-5i9"/>
                                     <constraint firstAttribute="trailing" secondItem="Ne8-J0-JU0" secondAttribute="trailing" id="GAW-dA-aF5"/>
                                     <constraint firstItem="Ne8-J0-JU0" firstAttribute="top" secondItem="2qP-fp-e8M" secondAttribute="top" id="XtN-q8-jeX"/>
+                                    <constraint firstAttribute="width" secondItem="2qP-fp-e8M" secondAttribute="height" multiplier="1:1" id="jmE-Gl-QUa"/>
                                     <constraint firstItem="Ih7-EI-OQg" firstAttribute="centerY" secondItem="2qP-fp-e8M" secondAttribute="centerY" id="rLu-PB-P3E"/>
                                     <constraint firstAttribute="bottom" secondItem="Ne8-J0-JU0" secondAttribute="bottom" id="rqH-Am-aOw"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
+                                        <real key="value" value="44"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.0"/>
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -376,9 +390,8 @@
                         <viewLayoutGuide key="safeArea" id="wyr-3h-1cs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="2qP-fp-e8M" firstAttribute="centerX" secondItem="wyr-3h-1cs" secondAttribute="centerX" id="DOc-eT-I9E"/>
                             <constraint firstItem="wyr-3h-1cs" firstAttribute="top" secondItem="rcW-Ni-Cex" secondAttribute="top" id="N60-m7-Afh"/>
-                            <constraint firstItem="wyr-3h-1cs" firstAttribute="trailing" secondItem="2qP-fp-e8M" secondAttribute="trailing" constant="8" id="Ubh-Uc-Yfi"/>
-                            <constraint firstItem="2qP-fp-e8M" firstAttribute="leading" secondItem="wyr-3h-1cs" secondAttribute="leading" constant="8" id="We9-Bz-PVA"/>
                             <constraint firstItem="wyr-3h-1cs" firstAttribute="bottom" secondItem="2qP-fp-e8M" secondAttribute="bottom" constant="16" id="YOU-lh-jiR"/>
                             <constraint firstItem="wyr-3h-1cs" firstAttribute="leading" secondItem="rcW-Ni-Cex" secondAttribute="leading" id="fiX-j9-14e"/>
                             <constraint firstItem="rcW-Ni-Cex" firstAttribute="trailing" secondItem="wyr-3h-1cs" secondAttribute="trailing" id="snR-F9-M7j"/>
@@ -455,7 +468,7 @@
         <!--러닝-->
         <scene sceneID="ZB0-uB-rkh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z2S-EZ-4dD" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z2S-EZ-4dD" customClass="NavigationController" customModule="Pace_Maker" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="러닝" id="h76-hI-t5z">
                         <imageReference key="image" image="figure.walk.diamond" catalog="system" symbolScale="medium" renderingMode="template"/>
                     </tabBarItem>
@@ -520,6 +533,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

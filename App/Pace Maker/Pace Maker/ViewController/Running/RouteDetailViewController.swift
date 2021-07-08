@@ -19,6 +19,7 @@ class RouteDetailViewController: UIViewController {
     
     var rootGPX: GPXRoot? = nil
     var log: Log? = nil
+    var secondaryLog: Log? = nil
     
     var pace: Int? = nil
     

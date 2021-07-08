@@ -95,12 +95,6 @@ class UserSearchTableTableViewController: UITableViewController, UISearchBarDele
         
         cell.userInfoLabel.text = txt
         
-        //DispatchQueue.main.async {
-        //    if (user?.friends.contains(key) == true && key != user?.UID){
-        //        cell.followBtn.isHidden = true
-        //    }
-        //}
-
         return cell
     }
 

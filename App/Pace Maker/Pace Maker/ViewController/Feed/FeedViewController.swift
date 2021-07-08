@@ -19,7 +19,7 @@ class FeedViewController: UIViewController {
     func loadLogsOfUser(){
         let refer = realtimeReference.reference(withPath: "log")
         let logOrderByDate = refer.queryOrdered(byChild: "date")
-        logOrderByDate.observe(.value, with: {snapshot in
+        logOrderByDate.observeSingleEvent(of: .value) {snapshot in
             for child in snapshot.children.allObjects as! [DataSnapshot]{
                 let val = child.childSnapshot(forPath: "runner").value as! String
                 if val == user?.UID{
@@ -33,7 +33,7 @@ class FeedViewController: UIViewController {
             }
             self.logsOfUser.reverse()
             self.feedCollectionView.reloadData()
-        })
+        }
         
     }
 
@@ -66,16 +66,6 @@ class FeedViewController: UIViewController {
         flowLayout.itemSize = CGSize(width: width, height: width)
         self.feedCollectionView.collectionViewLayout = flowLayout
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

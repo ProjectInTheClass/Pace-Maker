@@ -55,6 +55,13 @@ class ActivityViewController: UIViewController {
         self.tableView.reloadData()
     }
     
+    func sortLogs(){
+        logs.sort { small, large in
+            // print("small \(small.dateString) large\(large.dateString)")
+            return small.dateString > large.dateString
+        }
+    }
+    
     @IBAction func changedSegmentControlValue(_ sender: UISegmentedControl) {
         let selectedIndex = sender.selectedSegmentIndex
         currentMetric = CurrentMetric.allValues[selectedIndex]
@@ -71,7 +78,7 @@ extension ActivityViewController {
         let logReference = realtimeReference.reference(withPath: "log")
         logReference.queryOrdered(byChild: "runner")
             .queryEqual(toValue: user.UID)
-            .observe(.value) { snapshot in
+            .observeSingleEvent(of: .value) { snapshot in
                 print("snapshot.childrenCount", snapshot.childrenCount)
                 let snapshot = snapshot.value as? [String : AnyObject] ?? [:]
                 self.logs.removeAll()
@@ -88,6 +95,7 @@ extension ActivityViewController {
                     
                     self.logs.append(Log(dateString: date, distanceInKilometer: distance, routeSavedPath: route, runnerUID: runnerId, nickname: nickname, timeSpentInSeconds: time))
                 }
+                self.logs.sort(){ $0.dateString > $1.dateString }
                 self.updateUI()
             }
     }
@@ -317,7 +325,7 @@ extension ActivityViewController {
                 // print(date, heartRate)
                 self.heartRateData.append((date, heartRate))
             }
-            self.heartRateData.sort { $0.date < $1.date }
+            self.heartRateData.sort { $0.date > $1.date }
         }
     }
     
@@ -351,7 +359,7 @@ extension ActivityViewController {
                 let kiloCalories = sampleOneDay.value.reduce(0.0){$0 + $1.value}
                 self.activeEnergyBurnedData.append((date, kiloCalories))
             }
-            self.activeEnergyBurnedData.sort { $0.date < $1.date }
+            self.activeEnergyBurnedData.sort { $0.date > $1.date }
         }
     }
     
@@ -372,14 +380,6 @@ extension ActivityViewController {
         }
         HKHealthStore().execute(sampleQuery)
     }
-    
-//    func saveDistanceWalkingRunning(){
-//        let healthStore = HKHealthStore()
-//
-//        if let status = healthStore.authorizationStatus(for: HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)){
-//
-//        }
-//    }
     
     func authorizeHealtKitData() {
         

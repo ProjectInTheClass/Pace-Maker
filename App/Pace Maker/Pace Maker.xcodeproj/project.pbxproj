@@ -14,12 +14,21 @@
 		18161571263B0D89008038C5 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18161570263B0D89008038C5 /* Setting.storyboard */; };
 		18161574263B0D97008038C5 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18161573263B0D97008038C5 /* Feed.storyboard */; };
 		1824F469266F21BC00D8B9BC /* RoutesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1824F468266F21BC00D8B9BC /* RoutesTableViewCell.swift */; };
-		1824F46C266F410200D8B9BC /* coolvetica rg it.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1824F46B266F410200D8B9BC /* coolvetica rg it.ttf */; };
 		1824F46E266F411600D8B9BC /* Uni Sans Thin Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1824F46D266F411600D8B9BC /* Uni Sans Thin Italic.otf */; };
 		1824F470266F411E00D8B9BC /* Uni Sans Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1824F46F266F411E00D8B9BC /* Uni Sans Heavy.otf */; };
 		1824F472266F412500D8B9BC /* Uni Sans Heavy Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1824F471266F412500D8B9BC /* Uni Sans Heavy Italic.otf */; };
+		1824FBE32695991F00106467 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1824FBDC2695991F00106467 /* NotoSansKR-Light.otf */; };
+		1824FBE42695991F00106467 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1824FBDD2695991F00106467 /* NotoSansKR-Bold.otf */; };
+		1824FBE52695991F00106467 /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1824FBDE2695991F00106467 /* NotoSansKR-Thin.otf */; };
+		1824FBE72695991F00106467 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1824FBE02695991F00106467 /* NotoSansKR-Black.otf */; };
+		1824FBE82695991F00106467 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1824FBE12695991F00106467 /* NotoSansKR-Medium.otf */; };
+		1824FBE92695991F00106467 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1824FBE22695991F00106467 /* NotoSansKR-Regular.otf */; };
+		1824FBEE2695A0AC00106467 /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1824FBEA2695A0AC00106467 /* NotoSans-Italic.ttf */; };
+		1824FBEF2695A0AC00106467 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1824FBEB2695A0AC00106467 /* NotoSans-Regular.ttf */; };
+		1824FBF02695A0AC00106467 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1824FBEC2695A0AC00106467 /* NotoSans-Bold.ttf */; };
+		1824FBF12695A0AC00106467 /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1824FBED2695A0AC00106467 /* NotoSans-BoldItalic.ttf */; };
+		1824FBF32695B5A100106467 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1824FBF22695B5A100106467 /* NavigationController.swift */; };
 		18252B71261EFE79001A76DC /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18252B70261EFE79001A76DC /* Route.swift */; };
-		18291977262767CF00EE6A50 /* BinggraeMelona-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18291976262767CF00EE6A50 /* BinggraeMelona-Bold.ttf */; };
 		182B0229265B646E002C5195 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182B0228265B646E002C5195 /* HealthKit.framework */; };
 		1831C825264F05B100BC75F5 /* BadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1831C824264F05B100BC75F5 /* BadgeViewController.swift */; };
 		1831C828264F05C500BC75F5 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1831C827264F05C500BC75F5 /* ChallengeViewController.swift */; };
@@ -52,12 +61,11 @@
 		18A1EA332670BF3100037636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A1EA302670BF3100037636 /* Main.storyboard */; };
 		18A1EA342670BF3100037636 /* Social.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A1EA312670BF3100037636 /* Social.storyboard */; };
 		18A1EA362670DEF700037636 /* RunningResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1EA352670DEF700037636 /* RunningResultViewController.swift */; };
-		18A1EA382670E0BE00037636 /* BlackHanSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18A1EA372670E0BE00037636 /* BlackHanSans.ttf */; };
 		18B6F06C26565D8400534D9D /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6F06B26565D8400534D9D /* ActivityViewController.swift */; };
-		18C646AE264EC07A00E3E71B /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		18C646AE264EC07A00E3E71B /* (null) in Sources */ = {isa = PBXBuildFile; };
 		18D3C944265121B800EBA66A /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3C943265121B800EBA66A /* Challenge.swift */; };
 		18D3C947265121CE00EBA66A /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3C946265121CE00EBA66A /* Badge.swift */; };
-		18D3C94A265121D800EBA66A /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		18D3C94A265121D800EBA66A /* (null) in Sources */ = {isa = PBXBuildFile; };
 		18D3C94D265127C700EBA66A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D3C94C265127C700EBA66A /* Login.storyboard */; };
 		18D3C9502651293F00EBA66A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3C94F2651293F00EBA66A /* RegisterViewController.swift */; };
 		18D3C9562651299300EBA66A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3C9552651299300EBA66A /* LoginViewController.swift */; };
@@ -81,12 +89,21 @@
 		18161570263B0D89008038C5 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		18161573263B0D97008038C5 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		1824F468266F21BC00D8B9BC /* RoutesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesTableViewCell.swift; sourceTree = "<group>"; };
-		1824F46B266F410200D8B9BC /* coolvetica rg it.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "coolvetica rg it.ttf"; sourceTree = "<group>"; };
 		1824F46D266F411600D8B9BC /* Uni Sans Thin Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Uni Sans Thin Italic.otf"; sourceTree = "<group>"; };
 		1824F46F266F411E00D8B9BC /* Uni Sans Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Uni Sans Heavy.otf"; sourceTree = "<group>"; };
 		1824F471266F412500D8B9BC /* Uni Sans Heavy Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Uni Sans Heavy Italic.otf"; sourceTree = "<group>"; };
+		1824FBDC2695991F00106467 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
+		1824FBDD2695991F00106467 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
+		1824FBDE2695991F00106467 /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
+		1824FBE02695991F00106467 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
+		1824FBE12695991F00106467 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		1824FBE22695991F00106467 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
+		1824FBEA2695A0AC00106467 /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
+		1824FBEB2695A0AC00106467 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
+		1824FBEC2695A0AC00106467 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
+		1824FBED2695A0AC00106467 /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		1824FBF22695B5A100106467 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		18252B70261EFE79001A76DC /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
-		18291976262767CF00EE6A50 /* BinggraeMelona-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BinggraeMelona-Bold.ttf"; sourceTree = "<group>"; };
 		182B0227265B646E002C5195 /* Pace Maker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pace Maker.entitlements"; sourceTree = "<group>"; };
 		182B0228265B646E002C5195 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		1831C824264F05B100BC75F5 /* BadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewController.swift; sourceTree = "<group>"; };
@@ -122,7 +139,6 @@
 		18A1EA302670BF3100037636 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		18A1EA312670BF3100037636 /* Social.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Social.storyboard; sourceTree = "<group>"; };
 		18A1EA352670DEF700037636 /* RunningResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningResultViewController.swift; sourceTree = "<group>"; };
-		18A1EA372670E0BE00037636 /* BlackHanSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BlackHanSans.ttf; sourceTree = "<group>"; };
 		18B6F06B26565D8400534D9D /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityViewController.swift; path = "Pace Maker/ViewController/Activity/ActivityViewController.swift"; sourceTree = SOURCE_ROOT; };
 		18D3C943265121B800EBA66A /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		18D3C946265121CE00EBA66A /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
@@ -180,6 +196,7 @@
 				1831C823264F059900BC75F5 /* Running */,
 				188B6F3D265A3A6C00DA24BE /* Feed */,
 				1816155F263B01F0008038C5 /* TitleViewController.swift */,
+				1824FBF22695B5A100106467 /* NavigationController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -215,12 +232,19 @@
 		182919752627679E00EE6A50 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				1824FBEC2695A0AC00106467 /* NotoSans-Bold.ttf */,
+				1824FBED2695A0AC00106467 /* NotoSans-BoldItalic.ttf */,
+				1824FBEA2695A0AC00106467 /* NotoSans-Italic.ttf */,
+				1824FBEB2695A0AC00106467 /* NotoSans-Regular.ttf */,
+				1824FBDC2695991F00106467 /* NotoSansKR-Light.otf */,
+				1824FBDD2695991F00106467 /* NotoSansKR-Bold.otf */,
+				1824FBDE2695991F00106467 /* NotoSansKR-Thin.otf */,
+				1824FBE02695991F00106467 /* NotoSansKR-Black.otf */,
+				1824FBE12695991F00106467 /* NotoSansKR-Medium.otf */,
+				1824FBE22695991F00106467 /* NotoSansKR-Regular.otf */,
 				1824F46F266F411E00D8B9BC /* Uni Sans Heavy.otf */,
-				18A1EA372670E0BE00037636 /* BlackHanSans.ttf */,
 				1824F471266F412500D8B9BC /* Uni Sans Heavy Italic.otf */,
-				1824F46B266F410200D8B9BC /* coolvetica rg it.ttf */,
 				1824F46D266F411600D8B9BC /* Uni Sans Thin Italic.otf */,
-				18291976262767CF00EE6A50 /* BinggraeMelona-Bold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -405,26 +429,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1824FBEF2695A0AC00106467 /* NotoSans-Regular.ttf in Resources */,
 				1824F472266F412500D8B9BC /* Uni Sans Heavy Italic.otf in Resources */,
 				18161574263B0D97008038C5 /* Feed.storyboard in Resources */,
 				1824F470266F411E00D8B9BC /* Uni Sans Heavy.otf in Resources */,
+				1824FBE82695991F00106467 /* NotoSansKR-Medium.otf in Resources */,
 				18A1EA342670BF3100037636 /* Social.storyboard in Resources */,
 				188B6F45265A3A7E00DA24BE /* FeedCell.xib in Resources */,
+				1824FBE92695991F00106467 /* NotoSansKR-Regular.otf in Resources */,
+				1824FBE72695991F00106467 /* NotoSansKR-Black.otf in Resources */,
 				18D3C98326523DD300EBA66A /* Running.storyboard in Resources */,
+				1824FBE32695991F00106467 /* NotoSansKR-Light.otf in Resources */,
 				18653ED2265F8FF5001D9A68 /* FeedStory.xcassets in Resources */,
 				1816156E263B0D59008038C5 /* Home.storyboard in Resources */,
-				18291977262767CF00EE6A50 /* BinggraeMelona-Bold.ttf in Resources */,
 				18161567263B0CFE008038C5 /* Activity.storyboard in Resources */,
 				18A1EA322670BF3100037636 /* LaunchScreen.storyboard in Resources */,
 				18161564263B078D008038C5 /* LaunchingImages.xcassets in Resources */,
+				1824FBE52695991F00106467 /* NotoSansKR-Thin.otf in Resources */,
 				18161571263B0D89008038C5 /* Setting.storyboard in Resources */,
-				18A1EA382670E0BE00037636 /* BlackHanSans.ttf in Resources */,
+				1824FBE42695991F00106467 /* NotoSansKR-Bold.otf in Resources */,
+				1824FBF12695A0AC00106467 /* NotoSans-BoldItalic.ttf in Resources */,
 				18653ECF265F8FBF001D9A68 /* CollectionReusableView.xib in Resources */,
+				1824FBEE2695A0AC00106467 /* NotoSans-Italic.ttf in Resources */,
 				18D3C94D265127C700EBA66A /* Login.storyboard in Resources */,
 				188126CB261EE8A70073029F /* Assets.xcassets in Resources */,
 				EDBE773B2670B57D00D7B304 /* GoogleService-Info.plist in Resources */,
+				1824FBF02695A0AC00106467 /* NotoSans-Bold.ttf in Resources */,
 				18A1EA2E2670BEEE00037636 /* GoogleService-Info.plist in Resources */,
-				1824F46C266F410200D8B9BC /* coolvetica rg it.ttf in Resources */,
 				18A1EA332670BF3100037636 /* Main.storyboard in Resources */,
 				1824F46E266F411600D8B9BC /* Uni Sans Thin Italic.otf in Resources */,
 			);
@@ -496,16 +527,17 @@
 				EDBB18432673054400977B39 /* HapticFeedback.swift in Sources */,
 				18A1EA362670DEF700037636 /* RunningResultViewController.swift in Sources */,
 				18FA7DC7264EDE4900C50554 /* RoundedView.swift in Sources */,
+				1824FBF32695B5A100106467 /* NavigationController.swift in Sources */,
 				18D3C944265121B800EBA66A /* Challenge.swift in Sources */,
 				18161560263B01F0008038C5 /* TitleViewController.swift in Sources */,
 				A66F2A58266F413D00D99E5E /* ContentsViewController.swift in Sources */,
 				18653EC8265F8EAB001D9A68 /* User.swift in Sources */,
-				18C646AE264EC07A00E3E71B /* BuildFile in Sources */,
+				18C646AE264EC07A00E3E71B /* (null) in Sources */,
 				1831C828264F05C500BC75F5 /* ChallengeViewController.swift in Sources */,
 				1866A409266DF278001CE029 /* UnderlineLabel.swift in Sources */,
 				188B6F43265A3A7E00DA24BE /* FeedCell.swift in Sources */,
 				ED3FF83D2668DE2D0028D5EE /* SocialViewController.swift in Sources */,
-				18D3C94A265121D800EBA66A /* BuildFile in Sources */,
+				18D3C94A265121D800EBA66A /* (null) in Sources */,
 				18952184263F0D510089AE77 /* RunningViewController.swift in Sources */,
 				18653ED4265F998D001D9A68 /* RouteSelectViewController.swift in Sources */,
 				18D3C9502651293F00EBA66A /* RegisterViewController.swift in Sources */,

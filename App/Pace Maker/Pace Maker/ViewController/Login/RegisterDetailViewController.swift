@@ -28,11 +28,12 @@ class RegisterDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
         setPickerView()
-        setInitialValueIfAvailable()
         activityIndicator.hidesWhenStopped = true
         underKeyboardLayoutConstraint.setup(bottomLayoutConstraint, view: view)
+        // 이름을 받아올 수 있다면 나중에, 저절로 이름을, 회원가입시에 받을 수 있도록 하자 setInitialValueIfAvailable()
     }
     
     func setPickerView() {
@@ -46,32 +47,6 @@ class RegisterDetailViewController: UIViewController {
         }
     }
     
-    func setInitialValueIfAvailable() {
-        let _ = HKHealthStore()
-        
-        if HKHealthStore.isHealthDataAvailable(){
-            // nickname
-            
-            // user name
-            name.text = NSFullUserName()
-            
-//            do {
-//                let datesComponents = try healthStore.dateOfBirthComponents()
-//            } catch error {
-//                print(error)
-//            }
-//
-//            let datesComponents = healthStore.dateOfBirthComponents()
-//            // age
-//            let calendar = Calendar.current
-//
-//            let year = calendar.dateComponents([.year], from: datesComponents.date!, to: Date()).year
-//            self.age.text = String(year)
-        } else {
-            return
-        }
-
-    }
     
     @IBAction func registerNewUser(_ sender: Any) {
         guard let name = name.text,

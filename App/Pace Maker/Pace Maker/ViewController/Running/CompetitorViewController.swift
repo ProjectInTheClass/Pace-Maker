@@ -38,16 +38,6 @@ class CompetitorViewController: UIViewController {
             followers[Category.friends.rawValue]?["name"] = friend
         }
     }
-    
-//    func loadFriends() {
-//        let refer = realtimeReference.reference(withPath: "user")
-//
-//        refer.child(String(user!.UID)).child("friends").observe(.value){ snapshot in
-//            let friends = snapshot.value as! [Int]
-//            followers[Category.friends.rawValue]?.removeAll()
-//            followers[Category.friends.rawValue]? = snapshot.value as! [Int]
-//        }
-//    }
 
 }
 
@@ -66,25 +56,7 @@ extension CompetitorViewController :UITableViewDataSource, UITableViewDelegate{
         
         cell.textLabel!.text = "auaicn"
         return cell
-//
-//        let followerName = categoryValues
-//        switch indexPath.section {
-//            case 0:
-//                cell.textLabel = user?.name
-//                cell.detailTextLabel =
-//            case 1:
-//
-//            case 2:
-//
-//            default:
-//                print("error")
-//        }
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "follower",for: indexPath)
-//
-//        cell.textLabel = user?.friends[indexPath.row].
-//        return cell
 
-//        let categoryValue = followers
     }
     
     // ABOUT SECTION

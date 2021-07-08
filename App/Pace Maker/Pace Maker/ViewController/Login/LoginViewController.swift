@@ -168,14 +168,6 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
         }
     }
     
-//    private func saveUserInKeychain(_ userIdentifier: String) {
-//        do {
-//            try KeychainItem(service: "com.example.apple-samplecode.juice", account: "userIdentifier").saveItem(userIdentifier)
-//        } catch {
-//            print("Unable to save userIdentifier to keychain.")
-//        }
-//    }
-    
     private func showPasswordCredentialAlert(username: String, password: String) {
         let message = "The app has received your selected credential from the keychain. \n\n Username: \(username)\n Password: \(password)"
         let alertController = UIAlertController(title: "Keychain Credential Received",

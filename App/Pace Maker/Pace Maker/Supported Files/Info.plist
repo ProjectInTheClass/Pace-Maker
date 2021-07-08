@@ -36,12 +36,19 @@
 	<string>운동 기록을 추적하고 기록하기 위해서, 앱 사용시간동안 위치 정보에 대한 수집이 필요합니다.</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>BinggraeMelona-Bold.ttf</string>
+		<string>NotoSans-Bold.ttf</string>
+		<string>NotoSans-BoldItalic.ttf</string>
+		<string>NotoSans-Italic.ttf</string>
+		<string>NotoSans-Regular.ttf</string>
 		<string>Uni Sans Heavy.otf</string>
-		<string>BlackHanSans.ttf</string>
 		<string>Uni Sans Heavy Italic.otf</string>
-		<string>coolvetica rg it.ttf</string>
 		<string>Uni Sans Thin Italic.otf</string>
+		<string>NotoSansKR-Black.otf</string>
+		<string>NotoSansKR-Bold.otf</string>
+		<string>NotoSansKR-Light.otf</string>
+		<string>NotoSansKR-Regular.otf</string>
+		<string>NotoSansKR-Medium.otf</string>
+		<string>NotoSansKR-Thin.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
