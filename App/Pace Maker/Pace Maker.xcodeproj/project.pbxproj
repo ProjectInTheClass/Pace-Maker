@@ -28,6 +28,7 @@
 		1824FBF02695A0AC00106467 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1824FBEC2695A0AC00106467 /* NotoSans-Bold.ttf */; };
 		1824FBF12695A0AC00106467 /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1824FBED2695A0AC00106467 /* NotoSans-BoldItalic.ttf */; };
 		1824FBF32695B5A100106467 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1824FBF22695B5A100106467 /* NavigationController.swift */; };
+		1824FBF52697FF6300106467 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1824FBF42697FF6200106467 /* LaunchScreenViewController.swift */; };
 		18252B71261EFE79001A76DC /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18252B70261EFE79001A76DC /* Route.swift */; };
 		182B0229265B646E002C5195 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182B0228265B646E002C5195 /* HealthKit.framework */; };
 		1831C825264F05B100BC75F5 /* BadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1831C824264F05B100BC75F5 /* BadgeViewController.swift */; };
@@ -103,6 +104,7 @@
 		1824FBEC2695A0AC00106467 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
 		1824FBED2695A0AC00106467 /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		1824FBF22695B5A100106467 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		1824FBF42697FF6200106467 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		18252B70261EFE79001A76DC /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		182B0227265B646E002C5195 /* Pace Maker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pace Maker.entitlements"; sourceTree = "<group>"; };
 		182B0228265B646E002C5195 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -255,6 +257,7 @@
 				18653EC9265F8F92001D9A68 /* HomeViewController.swift */,
 				1831C824264F05B100BC75F5 /* BadgeViewController.swift */,
 				1831C827264F05C500BC75F5 /* ChallengeViewController.swift */,
+				1824FBF42697FF6200106467 /* LaunchScreenViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				1831C828264F05C500BC75F5 /* ChallengeViewController.swift in Sources */,
 				1866A409266DF278001CE029 /* UnderlineLabel.swift in Sources */,
 				188B6F43265A3A7E00DA24BE /* FeedCell.swift in Sources */,
+				1824FBF52697FF6300106467 /* LaunchScreenViewController.swift in Sources */,
 				ED3FF83D2668DE2D0028D5EE /* SocialViewController.swift in Sources */,
 				18D3C94A265121D800EBA66A /* (null) in Sources */,
 				18952184263F0D510089AE77 /* RunningViewController.swift in Sources */,

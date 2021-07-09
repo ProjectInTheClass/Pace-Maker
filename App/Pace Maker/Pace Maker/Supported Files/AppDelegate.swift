@@ -18,6 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         configureFormatter()
+        
+        // launch screen cache
+        func clearLaunchScreenCache() {
+            do {
+                try FileManager.default.removeItem(atPath: NSHomeDirectory()+"/Library/SplashBoard")
+            } catch {
+                print("Failed to delete launch screen cache: \(error)")
+            }
+        }
         return true
     }
 

@@ -34,6 +34,10 @@ class RegisterViewController: UIViewController {
         underKeyboardLayoutConstraint.setup(bottomLayoutConstraint, view: view)
         activityIndicator.hidesWhenStopped = true
         setTextFields()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.email.becomeFirstResponder()
+        }
     }
     
     func setTextFields() {
@@ -83,6 +87,10 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerAction(_ sender: Any) {
+        registerNewUser()
+    }
+    
+    func registerNewUser(){
         if verifyCorrectInputFormat() {
             handleRegisterSuccess()
         }else {
@@ -101,13 +109,13 @@ class RegisterViewController: UIViewController {
     
     func verifyCorrectInputFormat() -> Bool {
         if !isCorrectEmailFormat{
-            alertIncorrectInputFormt(with: "이메일")
+            alertIncorrectInputFormat(with: "이메일", and:"")
             return false
         } else if !isCorrectPasswordFormat{
-            alertIncorrectInputFormt(with: "비밀번호")
+            alertIncorrectInputFormat(with: "비밀번호",and: "특수문자를 포함한 6 - 12 글자")
             return false
         }else if !isPasswordSame {
-            alertIncorrectInputFormt(with: "일치하지 않는 비밀번호")
+            alertIncorrectInputFormat(with: "일치하지 않는 비밀번호",and: "다시 입력한 비밀번호가 다릅니다.")
             return false
         }
         return true
@@ -130,8 +138,8 @@ class RegisterViewController: UIViewController {
             }
     }
     
-    func alertIncorrectInputFormt(with message: String){
-        let message = "\(message) 형식이 올바르지 않습니다"
+    func alertIncorrectInputFormat(with message: String, and information: String){
+        let message = "\(message) 형식이 올바르지 않습니다\n\(information)"
         let alertController = UIAlertController(title: "",
                                                 message: message,
                                                 preferredStyle: .alert)
@@ -145,7 +153,6 @@ class RegisterViewController: UIViewController {
         let alertController = UIAlertController(title: "이미 가입된 이메일",
                                                 message: message,
                                                 preferredStyle: .alert)
-//        alertController.addAction(UIAlertAction(title: "패스워드 찾기", style: .default, handler: nil))
         alertController.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
         alertController.addAction(UIAlertAction(title: "패스워드 찾기", style: .default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
@@ -176,26 +183,22 @@ class RegisterViewController: UIViewController {
 
 extension RegisterViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return true
-    }
-    
-    private func switchBasedNextTextField(_ textField: UITextField) {
-        switch textField {
-            case self.email:
-                self.email.becomeFirstResponder()
-            case self.password:
-                self.password.becomeFirstResponder()
-            case self.password:
-                self.anotherPassword.becomeFirstResponder()
+        switch textField.tag {
+            case 1:
+                password.becomeFirstResponder()
+            case 2:
+                anotherPassword.becomeFirstResponder()
+            case 3:
+                registerNewUser()
             default:
-                self.email.resignFirstResponder()
+                break
         }
+        return true
     }
 }
 
 
 extension String {
-    
     func isValidEmail() -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)

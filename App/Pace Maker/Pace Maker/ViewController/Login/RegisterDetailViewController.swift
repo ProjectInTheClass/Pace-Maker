@@ -31,9 +31,16 @@ class RegisterDetailViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         setPickerView()
+        setTextFields()
         activityIndicator.hidesWhenStopped = true
         underKeyboardLayoutConstraint.setup(bottomLayoutConstraint, view: view)
         // 이름을 받아올 수 있다면 나중에, 저절로 이름을, 회원가입시에 받을 수 있도록 하자 setInitialValueIfAvailable()
+    }
+    
+    func setTextFields() {
+        nickname.delegate = self
+        name.delegate = self
+        age.delegate = self
     }
     
     func setPickerView() {
@@ -47,8 +54,11 @@ class RegisterDetailViewController: UIViewController {
         }
     }
     
+    @IBAction func tappedRegisterButton(_ sender: Any) {
+        registerNewUser()
+    }
     
-    @IBAction func registerNewUser(_ sender: Any) {
+    func registerNewUser(){
         guard let name = name.text,
               let nickname = nickname.text,
               let age = age.text else { return }
@@ -92,5 +102,19 @@ extension RegisterDetailViewController: UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         age.text = String(ages[row])
+    }
+}
+
+extension RegisterDetailViewController : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField.tag {
+            case 1:
+                name.becomeFirstResponder()
+            case 2:
+                age.becomeFirstResponder()
+            default:
+                break
+        }
+        return true
     }
 }

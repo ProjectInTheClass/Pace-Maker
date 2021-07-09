@@ -190,7 +190,7 @@ extension ActivityViewController {
         if currentMetric == .pace {
             // 최고기록을 뽑아낸다
             let bestRecord: Double = dataEntries.reduce(Double.greatestFiniteMagnitude) {
-                ($0 < $1.1) ? $0 : $1.1
+                ($0 > $1.1) ? $0 : $1.1
             }
             let pacesInSeconds = Int(bestRecord)
             summary.text = String(format: currentMetric.summaryFormat, pacesInSeconds/60, pacesInSeconds%60)
